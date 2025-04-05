@@ -1,9 +1,5 @@
 # constants.py
 
-# Importing modules
-import constantsjm as const
-
-
 # Map of spectroscopy notation to angular momentum quantum number ℓ values
 ANGULAR_MOMENTUM_QUANTUM_NUMBERS = {
     'S': 0,
