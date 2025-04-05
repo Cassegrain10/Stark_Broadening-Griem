@@ -1,4 +1,6 @@
-# constants.py
+"""
+constants.py
+"""
 
 # Map of spectroscopy notation to angular momentum quantum number ℓ values
 ANGULAR_MOMENTUM_QUANTUM_NUMBERS = {
