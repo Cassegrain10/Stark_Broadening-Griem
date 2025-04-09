@@ -2,7 +2,7 @@
 constants.py
 """
 
-# Map of spectroscopy notation to angular momentum quantum number ℓ values
+# Map of spectroscopy notation to angular momentum quantum number l values
 ANGULAR_MOMENTUM_QUANTUM_NUMBERS = {
     'S': 0,
     'P': 1,
