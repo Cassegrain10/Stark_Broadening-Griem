@@ -42,7 +42,7 @@ def load_energy_data(element):
 
 def find_upper_states(element: str, upper_orbital: str):
     """
-    Finds all the upper states with L_{j} in `upper_orbital`.
+    Finds all of the upper states with L_{j} in `upper_orbital`.
 
     Args:
         element (str): The alkali element symbol (e.g. 'Rb').
