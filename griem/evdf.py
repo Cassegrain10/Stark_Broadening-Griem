@@ -17,6 +17,9 @@ class EVDF:
     def calc_area(self):
         area = np.trapz(self.fv, self.vels)
         return area
+
+    def calc_v_avg(self):
+        return np.trapz(self.fv*vels, self.vels)
     
     def plot(self):
         fig = plt.figure()
