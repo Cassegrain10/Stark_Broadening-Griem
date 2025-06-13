@@ -314,6 +314,15 @@ The Stark_Broadening-Griem package relies on several scientific Python libraries
 These dependencies are listed in the install_requires of setup.py and will be installed automatically. The code is compatible with Python 3.7+ and should work on any OS (Linux, Windows, macOS) as it is OS-independent (all calculations are in Python/NumPy).   
 **Note on data files:** The package includes two data files (Excel spreadsheets) for energy levels of Rb and Cs. There is no additional database dependency; the data is local. Ensure that the installation places the `griem/data` folder in the correct location. The `load_energy_data` function will look for those files relative to the package directory. If you expand the repository or run from source, the files should be in `griem/data/`. If you experience a `FileNotFoundError` when loading data, it may indicate the data files are not in the expected path.  
 
+## Acknowledgments
+
+This project and its accompanying documentation were authored by Jordan Mindrup.
+
+ChatGPT (OpenAI) was used as an assistant tool during the development of the code and the preparation of this README file. In particular, ChatGPT was used to help draft portions of the documentation, explain technical concepts, and assist in the formatting of the README. All content was reviewed, verified, and refined by the author.
+
+The code logic, structure, and originality remain the author's own work, with AI used as a productivity and writing tool rather than a source of scientific content or computational methods.
+
+
 ## License
 This project is released as open-source. In the absence of a specific license file in the repository, we default to a permissive license to encourage use and contribution. The code and data are (unless otherwise noted) distributed under the MIT **License**. This means you are free to use, modify, and distribute the code, provided that appropriate credit is given to the author.   
 
