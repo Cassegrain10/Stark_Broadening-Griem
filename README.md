@@ -21,12 +21,289 @@ This project implements Griem’s theory of Stark broadening, allowing users to 
 The rest if this document will be helpful if you want to dig deep into the inner workings if thr code. However, the evst way to learn is to jusy do it. This Wuidj Start Guide should get you up and running in no time! 
 
 ### Installing the Library
-The firet step is tk if course, install the linbrary. This steo depends of course on what encironment you are using Griem in: cloud-based in *Google Collab*, or locally in Python on your device. 
+The first step is of if course, install the library. This step depends of course on what encironment you are using Griem in: cloud-based in *Google Collab*, or locally in Python on your device. 
 
-#### Cloud-Based on Google Collab
+#### Option 1: Cloud-Based on Google Collab
+At the very beginning of your notebook, you will include this,
+```python
+# Importing `Stark_Broadening-Griem` library into environment
+!pip install git+https://github.com/Cassegrain10/Stark_Broadening-Griem.git
+```
 
+#### Option 2: Locally in Python
+##### Step 1: Install Python
+If you don't have Python installed yet...  
+- You can download from the [official Python website](https://www.python.org/downloads/) and run from the terminal; however, I would highly reccomend downlaoding [Anaconda](https://www.anaconda.com/download). Anaconda provides terminals to manage your packages in as well as access to Spyder and VS Code (my recomendation).
+- Make sure to check **"Add Python to PATH"** during installation.
 
+##### Create a Virtual Environment (Recommended)
+A virtual environment keeps your project dependencies isolated and is in general good practice. You must be in your virtual environmnet to access any of the libraries you have `pip install`-ed.  
+Open a terminal (Command Prompt on Windows, or you can access through Anaconda Navigator -> CMD.exe prompt) and run:
+```bash
+python -m venv myenv
+```
+This will create a virtual environment names `myenv`. Then activate the environment:
+- On **Windows**:
+  ```bash
+  myenv\Scripts\activate
+  ```
+- On **Mac/Linux**:
+  ```bash
+  source myenv/bin/activate
+  ```
+In your terminal you should see something like this if your virtual environment is active:
+```
+(myenv) $
+```
 
+##### Step 3: Install the Library  
+With the virtual environmnet active, run:
+```bash
+pip install git+https://github.com/your-username/your-repo.git
+```
+**Remember**: You will have to make sure your virtual environment is active every time you want to access a library you have installed inside it.
+
+You now have the library installed!
+
+### Using the Library
+Now we will go over several examples on how to use the library.
+
+#### Example 1: Getting Familiar with the Library
+If you are using a local version of Python, you can begin with the next step, but remember - if you are using an online environment like Google Collab, you will need to begin your script _every time_ with the above installation instructions for Google Collab.  
+
+1. Import the library - this imports the library into your current script/notebook:
+```python
+# Import libraries
+import griem as gm
+```
+This imports `griem` and names it `gm`. Now to access an attribute, let's say MyFunc() in the `griem` library, just use `gm.MyFunc().
+
+2. Instantiate an instance of the `Griem` class:
+```python
+# Create Griem class with user defined parameters
+stark = gm.Griem(element="Rb",
+                 lower_state="4D3/2",
+                 upper_state="9F5/2",
+                 velocity=4.5e5)
+```
+This creates the Griem class - that UI that you will be working with! This sets up the parameters that you want. To perform the calculation,
+```python
+# Calculate the stark widths and shifts
+stark.calculate()
+```
+The calculations have been performed. Now all that is left is to display them!
+```python
+# Print the results
+stark.results.print()
+```
+
+You should see something like this:
+```bash
+=======================Griem Results=======================
+| Upper state   |       Width |        Shift |       d/w |
+|---------------|-------------|--------------|-----------|
+| 9F5/2         | 5.88916e-10 | -2.09973e-10 | -0.356542 |
+```
+
+#### Example 2: Getting to Know the `Griem` Class
+Let's get a little more familiar with the Griem class.
+```python
+from griem import Griem       # Simply imports only the Griem class
+
+# Define the transition and conditions
+element = 'Rb'                # Choose an element -> either 'Rb' or 'Cs'
+lower_state = '4D3/2'         # Choose a lower state 
+upper_state = 'F5/2'          # Choose an upper state -> general or specific, e.g. '12F5/2' or 'F5/2'
+electron_velocity = 1.0e6
+
+# Initialize the Griem calculation object
+stark = Griem(element=element,
+              lower_state=lower_state,     
+              upper_state=upper_state,
+              velocity=electron_velocity)             
+
+# Run the calculation (using default n_terms=1 perturbing state)
+stark.calculate(num_terms=1)
+
+# Print the results
+stark.results.print()
+```
+
+```
+=======================Griem Results=======================
+| Upper state   |       Width |        Shift |       d/w |
+|---------------|-------------|--------------|-----------|
+| 4F5/2         | 1.40488e-12 |  8.40408e-13 |  0.598205 |
+| 5F5/2         | 1.50602e-11 | -4.03348e-12 | -0.267823 |
+| 6F5/2         | 4.75402e-11 | -1.29311e-11 | -0.272004 |
+| 7F5/2         | 1.0736e-10  | -2.90627e-11 | -0.270703 |
+| 8F5/2         | 2.08105e-10 | -5.52197e-11 | -0.265345 |
+| 9F5/2         | 3.61459e-10 | -9.46651e-11 | -0.261897 |
+| 10F5/2        | 5.85655e-10 | -1.51066e-10 | -0.257943 |
+| 11F5/2        | 8.98192e-10 | -2.28529e-10 | -0.254432 |
+| 12F5/2        | 1.3171e-09  | -3.3161e-10  | -0.251773 |
+| 13F5/2        | 1.87406e-09 | -4.65236e-10 | -0.24825  |
+| 14F5/2        | 2.58516e-09 | -6.34858e-10 | -0.245578 |
+| 15F5/2        | 3.49928e-09 | -8.46208e-10 | -0.241824 |
+| 16F5/2        | 4.58866e-09 | -1.10583e-09 | -0.240993 |
+| 17F5/2        | 5.94347e-09 | -1.42016e-09 | -0.238945 |
+| 18F5/2        | 7.57743e-09 | -1.79643e-09 | -0.237076 |
+| 19F5/2        | 9.52035e-09 | -2.2422e-09  | -0.235516 |
+| 20F5/2        | 1.18356e-08 | -2.76534e-09 | -0.233647 |
+| 21F5/2        | 1.44856e-08 | -3.37469e-09 | -0.232969 |
+| 22F5/2        | 1.75892e-08 | -4.07872e-09 | -0.231888 |
+| 23F5/2        | 2.1147e-08  | -4.88687e-09 | -0.23109  |
+| 24F5/2        | 2.51893e-08 | -5.80886e-09 | -0.230609 |
+| 25F5/2        | 2.96823e-08 | -6.85487e-09 | -0.230941 |
+| 26F5/2        | 3.50845e-08 | -8.0803e-09  | -0.230309 |
+| 27F5/2        | 4.1084e-08  | -9.41707e-09 | -0.229215 |
+| 28F5/2        | 4.78315e-08 | -1.09137e-08 | -0.22817  |
+| 29F5/2        | 5.53814e-08 | -1.25808e-08 | -0.227167 |
+| 30F5/2        | 6.38013e-08 | -1.44322e-08 | -0.226206 |
+| 31F5/2        | 7.31593e-08 | -1.64817e-08 | -0.225284 |
+| 32F5/2        | 8.35202e-08 | -1.87418e-08 | -0.224398 |
+| 33F5/2        | 9.49511e-08 | -2.12258e-08 | -0.223544 |
+| 34F5/2        | 1.07536e-07 | -2.39507e-08 | -0.222723 |
+| 35F5/2        | 1.21348e-07 | -2.69309e-08 | -0.221931 |
+| 36F5/2        | 1.36445e-07 | -3.01765e-08 | -0.221163 |
+| 37F5/2        | 1.53047e-07 | -3.37371e-08 | -0.220435 |
+| 38F5/2        | 1.71051e-07 | -3.75838e-08 | -0.219723 |
+| 39F5/2        | 1.9057e-07  | -4.17403e-08 | -0.219029 |
+| 40F5/2        | 2.11777e-07 | -4.62434e-08 | -0.21836  |
+| 41F5/2        | 2.3483e-07  | -5.11267e-08 | -0.217718 |
+| 42F5/2        | 2.59625e-07 | -5.63614e-08 | -0.217088 |
+| 43F5/2        | 2.86345e-07 | -6.19867e-08 | -0.216476 |
+| 44F5/2        | 3.15135e-07 | -6.80322e-08 | -0.215883 |
+| 45F5/2        | 3.46435e-07 | -7.45951e-08 | -0.215322 |
+```
+
+Notice how here because we didn't specify the complete upper state, we got all the transitions, 4D3/2 -> nF5/2.  
+
+#### Example 3: Deeper into EEDFs
+Notice that in the previous two examples we only gave on value for the electron's velocity, and we provided no EVDF! We specify this as follows:
+
+```python
+
+# Import libraries
+import numpy as np
+
+from griem import Griem
+from griem.constants import H_BAR, ELECTRON_MASS, BOLTZMANN_CONSTANT
+
+# Define Maxwell-Boltz distribution
+me = ELECTRON_MASS
+kb = BOLTZMANN_CONSTANT
+
+def max_boltz(v: np.ndarray, T: float):
+    """
+    Computes the Maxwell-Boltzmann speed distribution for electrons at a given temperature.
+
+    Parameters
+    ----------
+    v : np.ndarray
+        Array of speeds (cm/s) at which to evaluate the distribution.
+    T : float
+        Temperature in Kelvin.
+
+    Returns
+    -------
+    np.ndarray
+        The Maxwell-Boltzmann distribution values evaluated at each speed in `v`.
+
+    Notes
+    -----
+    The distribution is normalized for electrons and defined as:
+
+        f(v) = (m / (2πkT))^(3/2) * 4πv² * exp(-mv² / (2kT))
+
+    where:
+        - m is the electron mass,
+        - k is Boltzmann's constant,
+        - T is the temperature in Kelvin,
+        - v is the speed in cm/s.
+    """
+    return (me/(2*np.pi*kb*T)**(3/2) * 4*np.pi*v**2 * np.exp(-me*v**2 / (2*kb*T)))
+
+# Define physical parameters, velocity space, and EVDF
+T = 500    # [K] temperature
+
+vels = np.linspace(1, 2e6, 100) # velocity space [m/s]
+EVDF = max_boltz(v=vels, T=T)   # EVDF
+
+# Normalize just in case :)
+area = np.trapezoid(EVDF, vels)
+EVDF /= area
+
+# Define the transition and conditions
+element = 'Rb'                # Choose an element -> either 'Rb' or 'Cs'
+lower_state = '4D3/2'         # Choose a lower state 
+upper_state = 'F5/2'          # Choose an upper state -> general or specific, e.g. '12F5/2' or 'F5/2'
+electron_velocity = vels      # Velocity space [m/s]
+electron_evdf = EVDF          # Maxwellian EVDF
+
+# Initialize the Griem calculation object
+stark = Griem(element=element,
+              lower_state=lower_state,     
+              upper_state=upper_state,
+              velocity=electron_velocity,
+              EVDF=electron_evdf)             
+
+# Run the calculation (using default n_terms=1 perturbing state)
+stark.calculate(num_terms=1)
+
+# Print the results
+stark.results.print()
+```
+
+_Terminal:_
+
+```
+=======================Griem Results=======================
+| Upper state   |       Width |        Shift |       d/w |
+|---------------|-------------|--------------|-----------|
+| 4F5/2         | 6.11639e-13 |  9.90407e-13 |  1.61927  |
+| 5F5/2         | 3.16505e-11 | -2.55661e-11 | -0.807763 |
+| 6F5/2         | 9.64463e-11 | -7.99597e-11 | -0.829059 |
+| 7F5/2         | 2.20206e-10 | -1.81108e-10 | -0.822448 |
+| 8F5/2         | 4.46609e-10 | -3.55094e-10 | -0.795089 |
+| 9F5/2         | 7.98651e-10 | -6.20879e-10 | -0.77741  |
+| 10F5/2        | 1.33796e-09 | -1.01295e-09 | -0.757087 |
+| 11F5/2        | 2.11363e-09 | -1.56201e-09 | -0.739014 |
+| 12F5/2        | 3.16954e-09 | -2.29894e-09 | -0.725323 |
+| 13F5/2        | 4.64514e-09 | -3.28501e-09 | -0.707193 |
+| 14F5/2        | 6.55245e-09 | -4.54385e-09 | -0.693459 |
+| 15F5/2        | 9.1508e-09  | -6.16954e-09 | -0.674208 |
+| 16F5/2        | 1.20825e-08 | -8.09476e-09 | -0.669955 |
+| 17F5/2        | 1.59171e-08 | -1.04972e-08 | -0.659492 |
+| 18F5/2        | 2.06078e-08 | -1.33943e-08 | -0.649964 |
+| 19F5/2        | 2.62255e-08 | -1.68376e-08 | -0.642029 |
+| 20F5/2        | 3.31056e-08 | -2.09407e-08 | -0.632544 |
+| 21F5/2        | 4.07425e-08 | -2.56316e-08 | -0.629112 |
+| 22F5/2        | 4.99086e-08 | -3.11255e-08 | -0.623649 |
+| 23F5/2        | 6.03939e-08 | -3.74214e-08 | -0.619621 |
+| 24F5/2        | 7.22193e-08 | -4.45734e-08 | -0.617195 |
+| 25F5/2        | 8.48719e-08 | -5.25249e-08 | -0.618872 |
+| 26F5/2        | 1.00833e-07 | -6.2082e-08  | -0.615689 |
+| 27F5/2        | 1.19125e-07 | -7.26882e-08 | -0.610184 |
+| 28F5/2        | 1.39863e-07 | -8.46084e-08 | -0.604937 |
+| 29F5/2        | 1.63249e-07 | -9.7936e-08  | -0.599916 |
+| 30F5/2        | 1.89523e-07 | -1.12788e-07 | -0.595115 |
+| 31F5/2        | 2.18928e-07 | -1.29281e-07 | -0.590519 |
+| 32F5/2        | 2.51704e-07 | -1.47526e-07 | -0.586109 |
+| 33F5/2        | 2.88102e-07 | -1.67638e-07 | -0.58187  |
+| 34F5/2        | 3.2842e-07  | -1.89761e-07 | -0.5778   |
+| 35F5/2        | 3.72932e-07 | -2.1402e-07  | -0.573884 |
+| 36F5/2        | 4.21872e-07 | -2.40509e-07 | -0.570099 |
+| 37F5/2        | 4.75925e-07 | -2.69619e-07 | -0.566516 |
+| 38F5/2        | 5.34895e-07 | -3.01154e-07 | -0.563014 |
+| 39F5/2        | 5.99182e-07 | -3.35309e-07 | -0.559611 |
+| 40F5/2        | 6.69348e-07 | -3.72383e-07 | -0.556337 |
+| 41F5/2        | 7.45934e-07 | -4.12654e-07 | -0.553204 |
+| 42F5/2        | 8.28744e-07 | -4.5592e-07  | -0.550134 |
+| 43F5/2        | 9.18391e-07 | -5.02503e-07 | -0.547156 |
+| 44F5/2        | 1.01538e-06 | -5.5265e-07  | -0.544276 |
+| 45F5/2        | 1.12108e-06 | -6.07132e-07 | -0.541562 |
+```
 ## Theoretical Background: Stark Broadening and Griem’s Model
 
 Stark Broadening refers to the broadening (and shift) of spectral lines due to the presence of electric fields, typically from charged particles in a plasma. Rapid collisions with electrons (and ions) perturb the energy levels of emitting/absorbing atoms, causing spectral lines to widen (broaden) and their centers to shift. In a dense plasma, the cumulative effect of many fleeting collisions produces a Lorentzian line profile characterized by a half-width (or full width at half maximum, FWHM) and a shift of the line center. Griem’s model provides a semi-classical framework to calculate these parameters for electron-impact broadening, treating collisions in the *impact approximation* (assuming sufficiently high perturber density such that collisions are frequent but short compared to radiative timescales).
@@ -361,7 +638,3 @@ ___
 
 By following these guidelines and citing appropriately, you acknowledge the work behind the code and the theory. We hope this tool proves useful in your plasma spectroscopy and atomic physics research. Please report any issues or suggestions on the GitHub repository. Happy computing!
 ____
-
-
-
-
