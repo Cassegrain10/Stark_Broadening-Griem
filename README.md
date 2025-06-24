@@ -75,8 +75,8 @@ You now have the library installed!
 ### Understanding the Library
 Before we dive into useage examples, understanding the inluts into thr API is crucial. 
 ### Using the Library
-Now we will go over several examples on how to use the library. 
-
+Now we will go over several examples on how to use the library. The onlh orr of the library that the user will interface with for thr calculations is the Griem class. The Griem class is
+a complete API that calls the main calculation engine. Below is the docstring-style structurr if thr Griem API:
 
 ```python
 class Griem:
@@ -113,6 +113,12 @@ class Griem:
     
         """
 ```
+
+And here is a table summarizing:
+...
+TABLE
+
+...
 #### Example 1: Getting Familiar with the Library
 If you are using a local version of Python, you can begin with the next step, but remember - if you are using an online environment like Google Collab, you will need to begin your script _every time_ with the above installation instructions for Google Collab.  
 
