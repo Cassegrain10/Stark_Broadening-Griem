@@ -189,42 +189,7 @@ stark.results.print()
 | 6F5/2         | 4.75402e-11 | -1.29311e-11 | -0.272004 |
 | 7F5/2         | 1.0736e-10  | -2.90627e-11 | -0.270703 |
 | 8F5/2         | 2.08105e-10 | -5.52197e-11 | -0.265345 |
-| 9F5/2         | 3.61459e-10 | -9.46651e-11 | -0.261897 |
-| 10F5/2        | 5.85655e-10 | -1.51066e-10 | -0.257943 |
-| 11F5/2        | 8.98192e-10 | -2.28529e-10 | -0.254432 |
-| 12F5/2        | 1.3171e-09  | -3.3161e-10  | -0.251773 |
-| 13F5/2        | 1.87406e-09 | -4.65236e-10 | -0.24825  |
-| 14F5/2        | 2.58516e-09 | -6.34858e-10 | -0.245578 |
-| 15F5/2        | 3.49928e-09 | -8.46208e-10 | -0.241824 |
-| 16F5/2        | 4.58866e-09 | -1.10583e-09 | -0.240993 |
-| 17F5/2        | 5.94347e-09 | -1.42016e-09 | -0.238945 |
-| 18F5/2        | 7.57743e-09 | -1.79643e-09 | -0.237076 |
-| 19F5/2        | 9.52035e-09 | -2.2422e-09  | -0.235516 |
-| 20F5/2        | 1.18356e-08 | -2.76534e-09 | -0.233647 |
-| 21F5/2        | 1.44856e-08 | -3.37469e-09 | -0.232969 |
-| 22F5/2        | 1.75892e-08 | -4.07872e-09 | -0.231888 |
-| 23F5/2        | 2.1147e-08  | -4.88687e-09 | -0.23109  |
-| 24F5/2        | 2.51893e-08 | -5.80886e-09 | -0.230609 |
-| 25F5/2        | 2.96823e-08 | -6.85487e-09 | -0.230941 |
-| 26F5/2        | 3.50845e-08 | -8.0803e-09  | -0.230309 |
-| 27F5/2        | 4.1084e-08  | -9.41707e-09 | -0.229215 |
-| 28F5/2        | 4.78315e-08 | -1.09137e-08 | -0.22817  |
-| 29F5/2        | 5.53814e-08 | -1.25808e-08 | -0.227167 |
-| 30F5/2        | 6.38013e-08 | -1.44322e-08 | -0.226206 |
-| 31F5/2        | 7.31593e-08 | -1.64817e-08 | -0.225284 |
-| 32F5/2        | 8.35202e-08 | -1.87418e-08 | -0.224398 |
-| 33F5/2        | 9.49511e-08 | -2.12258e-08 | -0.223544 |
-| 34F5/2        | 1.07536e-07 | -2.39507e-08 | -0.222723 |
-| 35F5/2        | 1.21348e-07 | -2.69309e-08 | -0.221931 |
-| 36F5/2        | 1.36445e-07 | -3.01765e-08 | -0.221163 |
-| 37F5/2        | 1.53047e-07 | -3.37371e-08 | -0.220435 |
-| 38F5/2        | 1.71051e-07 | -3.75838e-08 | -0.219723 |
-| 39F5/2        | 1.9057e-07  | -4.17403e-08 | -0.219029 |
-| 40F5/2        | 2.11777e-07 | -4.62434e-08 | -0.21836  |
-| 41F5/2        | 2.3483e-07  | -5.11267e-08 | -0.217718 |
-| 42F5/2        | 2.59625e-07 | -5.63614e-08 | -0.217088 |
-| 43F5/2        | 2.86345e-07 | -6.19867e-08 | -0.216476 |
-| 44F5/2        | 3.15135e-07 | -6.80322e-08 | -0.215883 |
+...
 | 45F5/2        | 3.46435e-07 | -7.45951e-08 | -0.215322 |
 ```
 
@@ -317,42 +282,8 @@ _Terminal:_
 | 6F5/2         | 9.64463e-11 | -7.99597e-11 | -0.829059 |
 | 7F5/2         | 2.20206e-10 | -1.81108e-10 | -0.822448 |
 | 8F5/2         | 4.46609e-10 | -3.55094e-10 | -0.795089 |
-| 9F5/2         | 7.98651e-10 | -6.20879e-10 | -0.77741  |
-| 10F5/2        | 1.33796e-09 | -1.01295e-09 | -0.757087 |
-| 11F5/2        | 2.11363e-09 | -1.56201e-09 | -0.739014 |
-| 12F5/2        | 3.16954e-09 | -2.29894e-09 | -0.725323 |
-| 13F5/2        | 4.64514e-09 | -3.28501e-09 | -0.707193 |
-| 14F5/2        | 6.55245e-09 | -4.54385e-09 | -0.693459 |
-| 15F5/2        | 9.1508e-09  | -6.16954e-09 | -0.674208 |
-| 16F5/2        | 1.20825e-08 | -8.09476e-09 | -0.669955 |
-| 17F5/2        | 1.59171e-08 | -1.04972e-08 | -0.659492 |
-| 18F5/2        | 2.06078e-08 | -1.33943e-08 | -0.649964 |
-| 19F5/2        | 2.62255e-08 | -1.68376e-08 | -0.642029 |
-| 20F5/2        | 3.31056e-08 | -2.09407e-08 | -0.632544 |
-| 21F5/2        | 4.07425e-08 | -2.56316e-08 | -0.629112 |
-| 22F5/2        | 4.99086e-08 | -3.11255e-08 | -0.623649 |
-| 23F5/2        | 6.03939e-08 | -3.74214e-08 | -0.619621 |
-| 24F5/2        | 7.22193e-08 | -4.45734e-08 | -0.617195 |
-| 25F5/2        | 8.48719e-08 | -5.25249e-08 | -0.618872 |
-| 26F5/2        | 1.00833e-07 | -6.2082e-08  | -0.615689 |
-| 27F5/2        | 1.19125e-07 | -7.26882e-08 | -0.610184 |
-| 28F5/2        | 1.39863e-07 | -8.46084e-08 | -0.604937 |
-| 29F5/2        | 1.63249e-07 | -9.7936e-08  | -0.599916 |
-| 30F5/2        | 1.89523e-07 | -1.12788e-07 | -0.595115 |
-| 31F5/2        | 2.18928e-07 | -1.29281e-07 | -0.590519 |
-| 32F5/2        | 2.51704e-07 | -1.47526e-07 | -0.586109 |
-| 33F5/2        | 2.88102e-07 | -1.67638e-07 | -0.58187  |
-| 34F5/2        | 3.2842e-07  | -1.89761e-07 | -0.5778   |
-| 35F5/2        | 3.72932e-07 | -2.1402e-07  | -0.573884 |
-| 36F5/2        | 4.21872e-07 | -2.40509e-07 | -0.570099 |
-| 37F5/2        | 4.75925e-07 | -2.69619e-07 | -0.566516 |
-| 38F5/2        | 5.34895e-07 | -3.01154e-07 | -0.563014 |
-| 39F5/2        | 5.99182e-07 | -3.35309e-07 | -0.559611 |
-| 40F5/2        | 6.69348e-07 | -3.72383e-07 | -0.556337 |
-| 41F5/2        | 7.45934e-07 | -4.12654e-07 | -0.553204 |
-| 42F5/2        | 8.28744e-07 | -4.5592e-07  | -0.550134 |
-| 43F5/2        | 9.18391e-07 | -5.02503e-07 | -0.547156 |
-| 44F5/2        | 1.01538e-06 | -5.5265e-07  | -0.544276 |
+
+...
 | 45F5/2        | 1.12108e-06 | -6.07132e-07 | -0.541562 |
 ```
 
@@ -498,7 +429,8 @@ electron_velocity = 1.0e6  # m/s, an example single velocity (roughly correspond
 griem_calc = Griem(element, lower_state, upper_state, velocity=electron_velocity)
 
 # Run the calculation (using default n_terms=1 perturbing state)
-result = griem_calc.calculate(num_terms=1)
+griem_calc.calculate(num_terms=1)
+result = griem.results
 
 # Print the results
 result.print()
@@ -534,7 +466,8 @@ These are floats (or complex components) in linear frequency units (Hz). You cou
 For a more accurate calculation, you may include more perturbing states. Suppose we suspect the first two nearest levels on each side of the upper state significantly contribute. We can set n_terms=2 or 3, etc.:
 ```python
 # Continuing from the previous setup, now include more perturbing states
-result2 = griem_calc.calculate(num_terms=2, want_interact_states=True)
+griem_calc.calculate(num_terms=2, want_interact_states=True)
+result2 = griem_calc.results
 result2.print()
 ```
 
@@ -578,8 +511,9 @@ distribution = velocities**2 * np.exp(-0.5 * me * velocities**2 / (kB * Te))
 
 # Create the Griem object with velocity array and EVDF
 calc = Griem(element, lower_state, upper_state, velocity=velocities, EVDF=distribution)
-res = calc.calculate(num_terms=1)
-res.print()
+calc = calc.calculate(num_terms=1)
+result = calc.results
+result.print()
 ``` 
 
 In this example, we created a numpy array of velocities and a corresponding array `distribution` with the Maxwellian distribution function values at those velocities. We passed those to `Griem`. The engine will integrate using trapezoidal integration over this array. The output will be the Stark width and shift for the Cs 6S–6P line at 10,000 K electron temperature (assuming an electron density of 1 per volume unit – see **Input/Output** section). A few things to note:  
