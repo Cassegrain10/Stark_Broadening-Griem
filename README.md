@@ -28,7 +28,13 @@ At the very beginning of your notebook, you will include this,
 ```python
 # Importing `Stark_Broadening-Griem` library into environment
 !pip install git+https://github.com/Cassegrain10/Stark_Broadening-Griem.git
+
+#===============
+# Code
+#===============
 ```
+And it's that easy! For that reason I _highly_ recomend using [Google Collab](https://colab.research.google.com/). 
+
 
 #### Option 2: Locally in Python
 ##### Step 1: Install Python
