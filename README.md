@@ -30,7 +30,8 @@ At the very beginning of your notebook, you will include this,
 !pip install git+https://github.com/Cassegrain10/Stark_Broadening-Griem.git
 
 #===============
-# Code
+# Import Libraries
+# ...
 #===============
 ```
 And it's that easy! For that reason I _highly_ recomend using [Google Collab](https://colab.research.google.com/). 
