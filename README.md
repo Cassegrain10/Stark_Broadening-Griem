@@ -72,6 +72,8 @@ pip install git+https://github.com/your-username/your-repo.git
 
 You now have the library installed!
 
+### Understanding the Library
+Before we dive into useage examples, understanding the inluts into thr API is crucial. 
 ### Using the Library
 Now we will go over several examples on how to use the library.
 
