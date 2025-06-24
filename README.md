@@ -304,6 +304,12 @@ _Terminal:_
 | 44F5/2        | 1.01538e-06 | -5.5265e-07  | -0.544276 |
 | 45F5/2        | 1.12108e-06 | -6.07132e-07 | -0.541562 |
 ```
+
+_more to come..._  
+
+In the meantime, please reach out with probelms and questions!
+
+
 ## Theoretical Background: Stark Broadening and Griem’s Model
 
 Stark Broadening refers to the broadening (and shift) of spectral lines due to the presence of electric fields, typically from charged particles in a plasma. Rapid collisions with electrons (and ions) perturb the energy levels of emitting/absorbing atoms, causing spectral lines to widen (broaden) and their centers to shift. In a dense plasma, the cumulative effect of many fleeting collisions produces a Lorentzian line profile characterized by a half-width (or full width at half maximum, FWHM) and a shift of the line center. Griem’s model provides a semi-classical framework to calculate these parameters for electron-impact broadening, treating collisions in the *impact approximation* (assuming sufficiently high perturber density such that collisions are frequent but short compared to radiative timescales).
