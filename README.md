@@ -18,7 +18,7 @@ This project implements Griem’s theory of Stark broadening, allowing users to 
 ---
 
 ## Quick Start Guide
-The rest if this document will be helpful if you want to dig deep into the inner workings if thr code. However, the evst way to learn is to jusy do it. This Wuidj Start Guide should get you up and running in no time! 
+The rest of this document will be helpful if you want to dig deep into the inner workings if thr code. However, the best way to learn is to just do it. This Quick Start Guide should get you up and running in no time! 
 
 ### Installing the Library
 The first step is of if course, install the library. This step depends of course on what encironment you are using Griem in: cloud-based in *Google Collab*, or locally in Python on your device. 
