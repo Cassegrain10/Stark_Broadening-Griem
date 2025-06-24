@@ -75,8 +75,44 @@ You now have the library installed!
 ### Understanding the Library
 Before we dive into useage examples, understanding the inluts into thr API is crucial. 
 ### Using the Library
-Now we will go over several examples on how to use the library.
+Now we will go over several examples on how to use the library. 
 
+
+```python
+class Griem:
+    """
+        The main API for the griem calculation.
+    
+        The `Griem` class provides a simple API for the calculation of Stark widths and shifts to 
+        electron collisionally broadened transitions in Alkalis. The user specifies the alkali, the 
+        lower state, the upper state, the velocity, EVDF, and the number of terms to include in the 
+        calculation summation (i.e. the number of perturbing states to include in the calculation). 
+        For a detailed derivation of the theory, see Physical Review, 125 177, and for experimental
+        benchmarks of the theory see Physical Review, 128 515.
+    
+        Attributes:
+            element (str): The alkali element symbol (e.g. 'Rb').
+            lower_state (str): Lower state of the transition (e.g. '4D3/2').
+            upper_state (str): Upper state(s) of the transition (e.g. '12F5/2' or 'F5/2').
+            velocity (float, np.ndarray): Velocity of the electrons - can be a single value (v_bar),
+                                          or it can be an array of velocities used with an EVDF.
+            EVDF (float, np.ndarray): Electron velocity distribution function (e.g. Maxwell-Boltzmann).
+            n_terms (int): The number of perturbing states to include in the calculation.
+    
+            energy_data (Table): The energy data used for the calculation.
+            processed_data (AliasDict): Contains all the dataframes of calculation data.
+            results (GriemResults): Contains the widths, shifts, and a table of the widths and shifts.
+    
+        Methods:
+            calculate(): Run the Griem calculation for the provided input.
+    
+        Example:
+            >>> griem = Griem("Rb", "4D3/2", "12F5/2", 4e5, n_terms=4)
+            >>> griem.calculate()
+            >>> griem.results.print()
+    
+        """
+```
 #### Example 1: Getting Familiar with the Library
 If you are using a local version of Python, you can begin with the next step, but remember - if you are using an online environment like Google Collab, you will need to begin your script _every time_ with the above installation instructions for Google Collab.  
 
