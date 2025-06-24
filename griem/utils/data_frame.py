@@ -78,8 +78,8 @@ class Table:
                 raise ValueError("No filename or title procided for saving.")
             
         if filename.endswith(".csv"):
-            self.table.to_csv(f"output/{filename}", index=False)
+            self.table.to_csv(f"{filename}", index=False)
         elif filename.endswith(".xlsx"):
-            self.table.to_excel(f"output/{filename}", index=False)
+            self.table.to_excel(f"{filename}", index=False)
         else:
             raise ValueError("Filename must end with .csv or .xlsx")
