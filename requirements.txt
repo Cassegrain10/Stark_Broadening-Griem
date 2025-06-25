@@ -7,7 +7,7 @@ griem @ git+https://github.com/Cassegrain10/Stark_Broadening-Griem.git@8d3074f5e
 kiwisolver==1.4.5
 matplotlib==3.8.0
 mplcursors==0.5.2
-numpy==1.26.0
+numpy<2.0
 packaging==23.1
 pandas==2.3.0
 Pillow==10.0.1
