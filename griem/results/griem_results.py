@@ -15,16 +15,34 @@ from ..utils.data_frame import Table
 # Define main class
 class GriemResults():
     """
-    Container for width and shift results from a Griem calculation.
+    Container for Stark width and shift results from a Griem calculation.
 
-    Takes the real (width) and imaginary (shift) values from the complex results of a griem
-    calculation. Provides convenient methods for printing and saving results.
+    This class extracts and organizes the real and imaginary components of the 
+    complex output from a Griem calculation, corresponding to the Stark broadened 
+    linewidth (width) and shift, respectively. It provides methods for displaying 
+    and exporting the results in a tabular format.
 
-    Arrtributes:
-        states (list or np.ndarray): List of upper states.
-        width (float or np.ndarray): Stark broadened width.
-        shift (float or np.ndarray): Stark broadened shift.
-        ratio (float or np.ndarray): Ratio of shift and width.
+    Attributes:
+        states (list or np.ndarray): Upper electronic states corresponding to each result.
+        width (float or np.ndarray): Stark broadened linewidths (real part of input).
+        shift (float or np.ndarray): Stark line shifts (imaginary part of input).
+        ratio (float or np.ndarray): Shift-to-width ratio (d/w) for each state.
+        table (Table): A formatted table object for printing and saving results.
+
+    Methods:
+        print():
+            Prints the formatted results table to the terminal.
+        
+        save(filename="griem.csv"):
+            Saves the results table to a CSV or Excel (.xlsx) file.
+
+    Args:
+        width_shift (list or np.ndarray): Complex-valued results from Griem calculation,
+                                          where the real part is the width and the imaginary 
+                                          part is the shift.
+        states (list or np.ndarray): List of upper states for which the calculation was performed.
+        interact_states (list or np.ndarray, optional): List of states that contributed to 
+                                                        the interaction/broadening for each result.
     """
     def __init__(self, width_shift: Union[list, np.ndarray], 
                  states: Union[list, np.ndarray], 
