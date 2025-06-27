@@ -469,6 +469,9 @@ stark.calculate(num_terms=1)
 # Print the results
 stark.results.print()
 ```
+
+_Terminal:_
+
 ```
 =======================Griem Results=======================
 | Upper state   |       Width |        Shift |       d/w |
