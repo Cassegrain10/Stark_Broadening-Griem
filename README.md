@@ -67,7 +67,7 @@ In your terminal you should see something like this if your virtual environment 
 ##### Step 3: Install the Library  
 With the virtual environmnet active, run:
 ```bash
-pip install git+https://github.com/your-username/your-repo.git
+pip install git+https://github.com/Cassegrain10/Stark_Broadening-Griem.git
 ```
 **Remember**: You will have to make sure your virtual environment is active every time you want to access a library you have installed inside it.
 
